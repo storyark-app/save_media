@@ -1,5 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
+import 'media_asset.dart';
 import 'save_media_method_channel.dart';
 
 abstract class SaveMediaPlatform extends PlatformInterface {
@@ -14,7 +15,7 @@ abstract class SaveMediaPlatform extends PlatformInterface {
   ///
   /// Defaults to [MethodChannelSaveMedia].
   static SaveMediaPlatform get instance => _instance;
-  
+
   /// Platform-specific implementations should set this with their own
   /// platform-specific class that extends [SaveMediaPlatform] when
   /// they register themselves.
@@ -23,7 +24,5 @@ abstract class SaveMediaPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
-  }
+  Future<bool> saveMediaAssets(List<MediaAsset> mediaAssets);
 }
