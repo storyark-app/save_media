@@ -4,6 +4,12 @@ class MediaAsset {
   final File file;
   final File? pairedVideoFile;
   final bool isVideo;
+  final DateTime createdAt;
 
-  const MediaAsset(this.file, this.pairedVideoFile, this.isVideo);
+  const MediaAsset({
+    required this.file,
+    this.pairedVideoFile,
+    required this.isVideo,
+    required this.createdAt,
+  });
 }
